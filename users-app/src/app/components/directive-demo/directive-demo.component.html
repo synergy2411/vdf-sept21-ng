@@ -12,21 +12,48 @@
   <div class="row">
     <div class="col-sm-4 col-md-3"
       *ngFor="let todo of todoCollection; index as idx; first as isFirst; last as isLast; even as isEven; odd as isOdd;">
-      <div class="card" [ngClass]="{'my-border' : isEven, 'my-feature' : isOdd}">
-        <div class="card-body">
-          <p class="text-center">
-            {{idx + " : " + todo.label}}
-            <br>
-            Is this First ? : {{ isFirst }}
-            <br>
-            Is this Last ? : {{ isLast }}
-            <br>
-            Is this Even ? : {{ isEven }}
-            <br>
-            Is this Odd ? : {{ isOdd }}
-          </p>
-        </div>
-      </div>
+      <!-- <div class="card" [ngClass]="{'my-border' : isEven, 'my-feature' : isOdd}"> -->
+      <!-- <div class="card" *ngIf="todo.status; else theElseTemplate"> -->
+        <ng-template [ngIf]="!todo.status">
+          <div class="card">
+            <div class="card-body">
+              <p class="text-center">
+                {{idx + " : " + todo.label}}
+                <br>
+                Is this First ? : {{ isFirst }}
+                <br>
+                Is this Last ? : {{ isLast }}
+                <br>
+                Is this Even ? : {{ isEven }}
+                <br>
+                Is this Odd ? : {{ isOdd }}
+              </p>
+            </div>
+          </div>
+        </ng-template>
+
+      <!-- </div> -->
+      <ng-template #theElseTemplate>
+        <p>Todo status is False!</p>
+      </ng-template>
     </div>
   </div>
+
+  <hr>
+
+  <ul class="nav nav-tabs">
+    <li class="nav-item"><a class="nav-link" href="#" (click)="tab=1">Case 1</a></li>
+    <li class="nav-item"><a href="#" class="nav-link" (click)="tab=2">Case 2</a></li>
+    <li class="nav-item"><a href="#" class="nav-link" (click)="tab=3">Case 3</a></li>
+  </ul>
+
+  <div [ngSwitch]="tab">
+    <div *ngSwitchCase="1">Case 1</div>
+    <div *ngSwitchCase="2">Case 2</div>
+    <div *ngSwitchCase="3">Case 3</div>
+    <div *ngSwitchDefault>Default output</div>
+  </div>
+
+
+
 </div>

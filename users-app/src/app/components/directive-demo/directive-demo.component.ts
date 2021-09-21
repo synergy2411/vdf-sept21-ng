@@ -14,6 +14,8 @@ export class DirectiveDemoComponent implements OnInit {
     fontSize : "1.3em"
   }
 
+  tab = 1;
+
   todoCollection = [
     { label : 'to buy the jeans', status : true},
     { label : 'to buy the pulses', status : false},
