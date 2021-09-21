@@ -22,7 +22,16 @@ export class PipeDemoComponent implements OnInit {
   filteredStatus : string = "";
 
   onAddNewItem(){
+    // impure change
     this.todoCollection.push({label : "New Label", status : "pending"});
+    // pure change
+    // this.todoCollection = [
+    //   {label : "grocery", status : "completed"},
+    // {label : "shopping", status : "pending"},
+    // {label : "insurance", status : "completed"},
+    // {label : "planting", status : "pending"},
+    // {label : "New Label", status : "pending"}
+    // ]
   }
 
   promise = new Promise((resolve, reject) => {

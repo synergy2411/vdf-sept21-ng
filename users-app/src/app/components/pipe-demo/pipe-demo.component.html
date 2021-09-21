@@ -13,10 +13,10 @@
       </select>
     </div>
   </div>
-
-
+<br>
   <ul class="list-group">
-    <li class="list-group-item" *ngFor="let todo of todoCollection | filter : filteredStatus">
+    <li class="list-group-item"
+      *ngFor="let todo of todoCollection | filter : filteredStatus">
       <p>{{todo.label | uppercase}}
         <span class="badge badge-dark float-right">
           {{ todo.status }}
