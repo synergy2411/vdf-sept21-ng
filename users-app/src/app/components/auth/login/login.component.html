@@ -6,29 +6,48 @@
           <h4 class="text-center">Login Form</h4>
         </div>
         <div class="card-body">
-          <form>
+          <form #f = "ngForm">
             <!-- Username -->
             <div class="form-group">
               <label for="username">Username : </label>
-              <input type="text" name="username" class="form-control">
+              <input type="email"
+                name="username"
+                class="form-control"
+                ngModel
+                required
+                email>
             </div>
             <!-- Password -->
             <div class="form-group">
               <label for="password">Password :</label>
-              <input type="password" name="password" class="form-control">
+              <input type="password"
+                name="password"
+                class="form-control"
+                ngModel
+                required
+                minlength="6">
             </div>
             <!-- Button -->
             <div class="row">
               <div class="col-6">
-                <button class="btn btn-success btn-block">Login</button>
+                <button
+                  [disabled]="!f.valid"
+                  class="btn btn-success btn-block"
+                  (click) = "onLogin(f)">Login</button>
               </div>
               <div class="col-6">
-                <button class="btn btn-danger btn-block">Reset</button>
+                <button
+                  (click)="onReset(f)"
+                  class="btn btn-danger btn-block">Reset</button>
               </div>
             </div>
+
+            <!-- form state : {{ f.valid }} -->
+
           </form>
         </div>
       </div>
     </div>
   </div>
 </div>
+
