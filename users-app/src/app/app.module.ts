@@ -6,10 +6,11 @@ import { AppComponent } from './app.component';
 import { UsersComponent } from './components/users/users.component';
 import { UserInfoComponent } from './components/users/user-info/user-info.component';
 import { UserImgComponent } from './components/users/user-img/user-img.component';
+import { DirectiveDemoComponent } from './components/directive-demo/directive-demo.component';
 
 @NgModule({
   declarations: [           // Component, Directive, Pipe
-    AppComponent, UsersComponent, UserInfoComponent, UserImgComponent
+    AppComponent, UsersComponent, UserInfoComponent, UserImgComponent, DirectiveDemoComponent
   ],
   imports: [               // imports the Modules - Built-in & Custom
     BrowserModule,

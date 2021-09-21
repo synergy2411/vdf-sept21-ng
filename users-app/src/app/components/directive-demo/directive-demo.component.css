@@ -1,0 +1,12 @@
+.my-border{
+  border : 2px red solid;
+}
+
+.my-feature{
+  font-weight: bold;
+  font-size: 1.2em;
+}
+
+.my-shadow{
+  box-shadow: 5px red yellow;
+}

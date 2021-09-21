@@ -1,0 +1,32 @@
+<!-- <p [ngClass]="['my-border', 'my-feature']" >
+  This paragraph will add/remove CSS classes</p> -->
+
+<button class="btn btn-primary" (click)="onToggle()">Toggle Class</button>
+<p [ngClass]="dynamicClass" >
+  This paragraph will add/remove CSS classes</p>
+
+
+<p [ngStyle]="dynamicStyle">This paragraph will display dynamic styles</p>
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-4 col-md-3"
+      *ngFor="let todo of todoCollection; index as idx; first as isFirst; last as isLast; even as isEven; odd as isOdd;">
+      <div class="card" [ngClass]="{'my-border' : isEven, 'my-feature' : isOdd}">
+        <div class="card-body">
+          <p class="text-center">
+            {{idx + " : " + todo.label}}
+            <br>
+            Is this First ? : {{ isFirst }}
+            <br>
+            Is this Last ? : {{ isLast }}
+            <br>
+            Is this Even ? : {{ isEven }}
+            <br>
+            Is this Odd ? : {{ isOdd }}
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
