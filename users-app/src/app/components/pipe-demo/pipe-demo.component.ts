@@ -10,6 +10,8 @@ import { IUser } from 'src/app/model/user';
 export class PipeDemoComponent implements OnInit {
 
   user : IUser;
+  contactNumber = 987654321;
+
   promise = new Promise((resolve, reject) => {
     setTimeout(() => {
       resolve("Here the data comes...")
