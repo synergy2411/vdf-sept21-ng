@@ -1,23 +1,21 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { IUser } from 'src/app/model/user';
+import { USER_DATA } from '../../model/mocks';
 
 @Component({
   selector : 'app-users',
   templateUrl : `./users.component.html`,
   styleUrls :  [`./users.component.css`]
 })
-export class UsersComponent{
-  user : IUser = {
-    firstName : "bill",
-    lastName : "gates",
-    dob : new Date("Dec 21, 1965"),
-    income : 50000,
-    company : "Microsoft",
-    image : "./assets/images/bill.jpg",
-    votes : 120
-  }
-
+export class UsersComponent implements OnInit{
+  user : IUser;
   showCmp : Boolean = true;
+
+  constructor(){ }
+
+  ngOnInit(){
+    this.user = USER_DATA;
+  }
 
   onMoreInfo(user : IUser){
     alert(`Hello from ${user.lastName}, I am working with ${user.company}!`)
