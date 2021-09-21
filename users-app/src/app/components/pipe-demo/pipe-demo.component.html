@@ -1,0 +1,17 @@
+<div class="container">
+  <p class="display-4">Pipe Demo Component</p>
+
+  <h4>Promise Object : {{ promise | async }}</h4>
+
+  <h4>
+    Username : {{ user.firstName | uppercase }} {{ user.lastName | titlecase }}
+  </h4>
+
+  <p>Income : {{ user.income | currency: "INR" }}</p>
+
+  <p>Date of Birth : {{ user.dob | date: "dd/MM/yyyy" }}</p>
+
+  <p>JSON Format : {{ user | json }}</p>
+
+  <p>Percent Format : {{ 50 | percent }}</p>
+</div>

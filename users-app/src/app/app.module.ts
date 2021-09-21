@@ -8,12 +8,13 @@ import { UserInfoComponent } from './components/users/user-info/user-info.compon
 import { UserImgComponent } from './components/users/user-img/user-img.component';
 import { DirectiveDemoComponent } from './components/directive-demo/directive-demo.component';
 import { HighlightDirective } from './directives/highlight.directive';
+import { PipeDemoComponent } from './components/pipe-demo/pipe-demo.component';
 
 @NgModule({
   declarations: [           // Component, Directive, Pipe
     AppComponent, UsersComponent,
     UserInfoComponent, UserImgComponent,
-    DirectiveDemoComponent, HighlightDirective
+    DirectiveDemoComponent, HighlightDirective, PipeDemoComponent
   ],
   imports: [               // imports the Modules - Built-in & Custom
     BrowserModule,
