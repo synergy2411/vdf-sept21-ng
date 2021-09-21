@@ -1,3 +1,8 @@
+
+<h3 appHighlight [favColor]="'grey'">This will get highlighted by directive.</h3>
+
+
+
 <!-- <p [ngClass]="['my-border', 'my-feature']" >
   This paragraph will add/remove CSS classes</p> -->
 
@@ -9,12 +14,19 @@
 <p [ngStyle]="dynamicStyle">This paragraph will display dynamic styles</p>
 
 <div class="container">
+
+  <!-- <select [(ngModel)]="taskStatus">
+    <option value="true">Completed Task</option>
+    <option value="false">Pending Task</option>
+  </select> -->
+
   <div class="row">
     <div class="col-sm-4 col-md-3"
       *ngFor="let todo of todoCollection; index as idx; first as isFirst; last as isLast; even as isEven; odd as isOdd;">
       <!-- <div class="card" [ngClass]="{'my-border' : isEven, 'my-feature' : isOdd}"> -->
       <!-- <div class="card" *ngIf="todo.status; else theElseTemplate"> -->
-        <ng-template [ngIf]="!todo.status">
+
+        <ng-template [ngIf]="todo.status">
           <div class="card">
             <div class="card-body">
               <p class="text-center">

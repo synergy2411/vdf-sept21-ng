@@ -16,6 +16,8 @@ export class DirectiveDemoComponent implements OnInit {
 
   tab = 1;
 
+  taskStatus : boolean = true;
+
   todoCollection = [
     { label : 'to buy the jeans', status : true},
     { label : 'to buy the pulses', status : false},
