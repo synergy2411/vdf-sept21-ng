@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { IUser } from 'src/app/model/user';
 
 @Component({
   selector : 'app-users',
@@ -6,7 +7,7 @@ import { Component } from '@angular/core';
   styleUrls :  [`./users.component.css`]
 })
 export class UsersComponent{
-  user = {
+  user : IUser = {
     firstName : "bill",
     lastName : "gates",
     dob : new Date("Dec 21, 1965"),
@@ -16,11 +17,13 @@ export class UsersComponent{
     votes : 120
   }
 
-  onMoreInfo(user : any){
+  showCmp : Boolean = true;
+
+  onMoreInfo(user : IUser){
     alert(`Hello from ${user.lastName}, I am working with ${user.company}!`)
   }
 
-  onChange(evt){
+  onChange(evt :any){
     if(evt.target.value < 100){
       return alert("Should be greater than 100");
     }else{
