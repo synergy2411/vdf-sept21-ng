@@ -12,6 +12,19 @@ export class PipeDemoComponent implements OnInit {
   user : IUser;
   contactNumber = 987654321;
 
+  todoCollection = [
+    {label : "grocery", status : "completed"},
+    {label : "shopping", status : "pending"},
+    {label : "insurance", status : "completed"},
+    {label : "planting", status : "pending"},
+  ]
+
+  filteredStatus : string = "";
+
+  onAddNewItem(){
+    this.todoCollection.push({label : "New Label", status : "pending"});
+  }
+
   promise = new Promise((resolve, reject) => {
     setTimeout(() => {
       resolve("Here the data comes...")

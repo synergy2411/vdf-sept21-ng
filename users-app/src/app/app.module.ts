@@ -10,13 +10,15 @@ import { DirectiveDemoComponent } from './components/directive-demo/directive-de
 import { HighlightDirective } from './directives/highlight.directive';
 import { PipeDemoComponent } from './components/pipe-demo/pipe-demo.component';
 import { CountryCodePipe } from './pipes/country-code.pipe';
+import { FilterPipe } from './pipes/filter.pipe';
 
 @NgModule({
   declarations: [           // Component, Directive, Pipe
     AppComponent, UsersComponent,
     UserInfoComponent, UserImgComponent,
     DirectiveDemoComponent, HighlightDirective, PipeDemoComponent,
-    CountryCodePipe
+    CountryCodePipe,
+    FilterPipe
   ],
   imports: [               // imports the Modules - Built-in & Custom
     BrowserModule,

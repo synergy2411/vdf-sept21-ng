@@ -1,6 +1,34 @@
 <div class="container">
   <p class="display-4">Pipe Demo Component</p>
 
+  <div class="row">
+    <div class="col-sm-6 col-md-6">
+      <button class="btn btn-warning btn-block"
+        (click)="onAddNewItem()">Add New Item</button>
+    </div>
+    <div class="col-sm-6 col-md-6">
+      <select class="form-control" [(ngModel)]="filteredStatus">
+        <option value="completed">Completed Todo</option>
+        <option value="pending">Pending Todo</option>
+      </select>
+    </div>
+  </div>
+
+
+  <ul class="list-group">
+    <li class="list-group-item" *ngFor="let todo of todoCollection | filter : filteredStatus">
+      <p>{{todo.label | uppercase}}
+        <span class="badge badge-dark float-right">
+          {{ todo.status }}
+        </span>
+      </p>
+    </li>
+  </ul>
+
+
+  <hr>
+
+
   <h4>Contact Number : {{ contactNumber | countryCode }} </h4>
 
   <h4>Promise Object : {{ promise | async }}</h4>
