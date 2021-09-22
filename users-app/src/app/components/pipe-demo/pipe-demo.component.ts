@@ -43,7 +43,7 @@ export class PipeDemoComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    this.user = USER_DATA
+    this.user = USER_DATA[0]
   }
 
 }
