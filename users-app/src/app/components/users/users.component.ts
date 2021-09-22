@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { IUser } from 'src/app/model/user';
-import { USER_DATA } from '../../model/mocks';
+import { DataService } from 'src/app/services/data.service';
+// import { USER_DATA } from '../../model/mocks';
 
 @Component({
   selector : 'app-users',
@@ -8,13 +9,18 @@ import { USER_DATA } from '../../model/mocks';
   styleUrls :  [`./users.component.css`]
 })
 export class UsersComponent implements OnInit{
-  user : IUser;
+  users : IUser[];
   showCmp : Boolean = true;
 
-  constructor(){ }
+  constructor(private dataService : DataService){ }
 
   ngOnInit(){
-    this.user = USER_DATA;
+    // this.user = USER_DATA;
+    // this.users = this.dataService.getUserData()
+    this.dataService.getHttpUserData()
+      .subscribe(response => {
+        this.users = <IUser[]>response['userdata']
+      });
   }
 
   onMoreInfo(user : IUser){
@@ -22,11 +28,11 @@ export class UsersComponent implements OnInit{
   }
 
   onChange(evt :any){
-    if(evt.target.value < 100){
-      return alert("Should be greater than 100");
-    }else{
-      this.user.votes = evt.target.value;
-    }
+    // if(evt.target.value < 100){
+    //   return alert("Should be greater than 100");
+    // }else{
+    //   this.user.votes = evt.target.value;
+    // }
 
   }
 

@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { UsersComponent } from './components/users/users.component';
@@ -32,9 +33,10 @@ import { CounterComponent } from './components/counter/counter.component';
   imports: [               // imports the Modules - Built-in & Custom
     BrowserModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
-  providers: [CounterService],          // Services
+  providers: [],          // Services
   bootstrap: [AppComponent]
 })
 export class AppModule { }
