@@ -6,22 +6,29 @@
           <h4 class="text-center">Register Form</h4>
         </div>
         <div class="card-body">
-          <form>
+          <form [formGroup]="registerForm">
             <!-- Username -->
             <div class="form-group">
               <label for="username">Username : </label>
-              <input class="form-control" type="text" name="username">
+              <input class="form-control"
+                type="text"
+                name="username"
+                [formControl]="username">
             </div>
             <!-- Password -->
             <div class="form-group">
               <label for="password">Password :</label>
-              <input type="password" name="password" class="form-control">
+              <input type="password"
+                name="password"
+                class="form-control"
+                [formControl]="password">
             </div>
             <!-- Buttons -->
             <div class="form-group">
               <div class="row">
                 <div class="col-6">
-                  <button class="btn btn-primary btn-block">Register</button>
+                  <button class="btn btn-primary btn-block"
+                    (click)="onRegister()">Register</button>
                 </div>
                 <div class="col-6">
                   <button class="btn btn-warning btn-block">Reset</button>
