@@ -40,6 +40,9 @@
                   <div [hidden]="!password.hasError('minlength')">
                     * Password must have at least 6 characters.
                   </div>
+                  <div [hidden]="!password.hasError('exclamation')">
+                    * Password must contain exclamation (!) mark.
+                  </div>
                 </div>
                 </div>
             </div>

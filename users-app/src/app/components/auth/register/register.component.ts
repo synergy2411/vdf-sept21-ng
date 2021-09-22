@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { AbstractControl, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-register',
@@ -14,9 +14,15 @@ export class RegisterComponent implements OnInit {
   ]);
   password : FormControl = new FormControl('',[
     Validators.required,
-    Validators.minLength(6)
+    Validators.minLength(6),
+    this.exclamationMarkValidator
   ]);
   registerForm : FormGroup;
+
+  exclamationMarkValidator(control : AbstractControl){
+    const hasExclamation = control.value.indexOf("!") >= 0;
+    return hasExclamation ? null : {exclamation : true}
+  }
 
   constructor(private fb : FormBuilder) {
     this.registerForm = this.fb.group({
