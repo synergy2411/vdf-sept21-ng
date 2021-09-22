@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { Observable, Subscription } from 'rxjs';
+import { Observable, Subscription, from, interval } from 'rxjs';
+import { map, tap } from 'rxjs/operators';
 
 @Component({
   selector: 'app-observable-demo',
@@ -20,6 +21,7 @@ export class ObservableDemoComponent {
     }, 4000);
     setTimeout(()=>{
       observer.next("Fourth Package")
+      // observer.error(new Error("Something bad happened"))
     }, 7000);
     setTimeout(()=>{
       observer.next("Fifth Package")
@@ -29,14 +31,31 @@ export class ObservableDemoComponent {
     }, 10000)
   })
 
+  source$ = from([1,2,3,4,5,6])
+
+  source1$ = interval(1000)
+
+
   unSub$: Subscription;
 
   onSubscribe(){
-    this.unSub$ = this.obs$.subscribe(
-      (data) => {console.log(data)},
-      (err) => {console.log(err)},
-      () => {console.log("COMPLETED")}
-    )
+
+    this.source$.subscribe(console.log)
+    this.unSub$ = this.source1$.subscribe(console.log)
+
+    // this.unSub$ = this.obs$
+    //   .pipe(map(value => {
+    //     return "My " + value;
+    //   })).pipe(tap(val => {
+    //     console.log("[TAP] " , val)
+    //   }))
+    //   .subscribe(
+    //   {
+    //     next : (data) => console.log(data),
+    //     error : (err) => console.log(err),
+    //     complete : () => console.log("COMPLETED")
+    //   }
+    // )
   }
 
   onUnsubscribe(){
