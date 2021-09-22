@@ -12,6 +12,8 @@ import { PipeDemoComponent } from './components/pipe-demo/pipe-demo.component';
 import { CountryCodePipe } from './pipes/country-code.pipe';
 import { FilterPipe } from './pipes/filter.pipe';
 import { LoginComponent } from './components/auth/login/login.component';
+import { FileUploadDirective } from './directives/fileupload.directive';
+import { RegisterComponent } from './components/auth/register/register.component';
 
 @NgModule({
   declarations: [           // Component, Directive, Pipe
@@ -20,7 +22,9 @@ import { LoginComponent } from './components/auth/login/login.component';
     DirectiveDemoComponent, HighlightDirective, PipeDemoComponent,
     CountryCodePipe,
     FilterPipe,
-    LoginComponent
+    LoginComponent,
+    FileUploadDirective,
+    RegisterComponent
   ],
   imports: [               // imports the Modules - Built-in & Custom
     BrowserModule,
