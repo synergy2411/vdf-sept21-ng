@@ -29,4 +29,8 @@ export class DataService {
   createTodo(label : string){
     return this.http.post(this.TODO_URL, {label})
   }
+
+  deleteTodo(id : string){
+    return this.http.delete(`${this.TODO_URL}/${id}`)
+  }
 }

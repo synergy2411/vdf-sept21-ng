@@ -13,6 +13,13 @@ export class TodosComponent implements OnInit {
   todoCollection = []
   label : string = "";
 
+  onDelete(todo: any){
+    this.dataService.deleteTodo(todo._id)
+      .subscribe(response => {
+        this.getTodos();
+      })
+  }
+
   onAddItem(){
     this.dataService.createTodo(this.label)
     .subscribe(response => {

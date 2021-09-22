@@ -2,7 +2,9 @@
 <p class="display-4">Todo App : MEAN </p>
 
 <ul class="list-group">
-  <li class="list-group-item" *ngFor="let todo of todoCollection">
+  <li class="list-group-item"
+    *ngFor="let todo of todoCollection"
+    (dblclick)="onDelete(todo)">
     <p>{{todo.label}}
       <span class="badge badge-primary float-right">
         {{ todo.status }}
