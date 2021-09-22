@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-register',
@@ -8,8 +8,14 @@ import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 })
 export class RegisterComponent implements OnInit {
 
-  username : FormControl = new FormControl('');
-  password : FormControl = new FormControl('');
+  username : FormControl = new FormControl('', [
+    Validators.required,
+    Validators.email
+  ]);
+  password : FormControl = new FormControl('',[
+    Validators.required,
+    Validators.minLength(6)
+  ]);
   registerForm : FormGroup;
 
   constructor(private fb : FormBuilder) {
@@ -17,6 +23,9 @@ export class RegisterComponent implements OnInit {
       username : this.username,
       password : this.password
     })
+  }
+  onReset(){
+    this.registerForm.reset();
   }
 
   onRegister(){

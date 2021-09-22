@@ -30,3 +30,21 @@ TypeScript ---> TSC ----> JavaSCript
 - ng g s path/to/service
 - ng g p path/to/pipe
 - ng g m path/to/module
+
+
+- Component Content Projection
+- Component Life cycle methods / hooks
+- Directives : Structural | Attributes | Custom Directives 
+    - HostBinding
+    - HostListener
+- Pipes : builtin | Customs 
+    - Pure
+    - Impure 
+- Forms 
+    - Template driven form
+
+
+- Model driven/ Reactive form
+- Services
+- Observables
+- XHR Calls
