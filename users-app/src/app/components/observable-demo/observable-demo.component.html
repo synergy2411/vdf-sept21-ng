@@ -6,3 +6,16 @@
   <button class="btn btn-danger" (click)="onUnsubscribe()">
     Unsubscribe
   </button>
+
+
+  <form [formGroup]="searchForm">
+    <input type="text" [formControl]="search" name="search">
+  </form>
+
+  <hr>
+
+  <ul class="list-group">
+    <li *ngFor="let repo of repos" class="list-group-item">
+      {{ repo.git_url }}
+    </li>
+  </ul>
