@@ -18,6 +18,7 @@ import { RegisterComponent } from './components/auth/register/register.component
 import { CounterService } from './services/counter.service';
 import { CounterComponent } from './components/counter/counter.component';
 import { ObservableDemoComponent } from './components/observable-demo/observable-demo.component';
+import { TodosComponent } from './components/todos/todos.component';
 
 @NgModule({
   declarations: [           // Component, Directive, Pipe
@@ -30,7 +31,8 @@ import { ObservableDemoComponent } from './components/observable-demo/observable
     FileUploadDirective,
     RegisterComponent,
     CounterComponent,
-    ObservableDemoComponent
+    ObservableDemoComponent,
+    TodosComponent
   ],
   imports: [               // imports the Modules - Built-in & Custom
     BrowserModule,

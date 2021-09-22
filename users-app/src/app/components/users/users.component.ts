@@ -18,8 +18,9 @@ export class UsersComponent implements OnInit{
     // this.user = USER_DATA;
     // this.users = this.dataService.getUserData()
     this.dataService.getHttpUserData()
-      .subscribe(response => {
-        this.users = <IUser[]>response['userdata']
+      .subscribe((response: IUser[]) => {
+        // this.users = <IUser[]>response['userdata']
+        this.users = response;
       });
   }
 

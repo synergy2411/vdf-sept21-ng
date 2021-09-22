@@ -1,0 +1,27 @@
+<div class="container">
+<p class="display-4">Todo App : MEAN </p>
+
+<ul class="list-group">
+  <li class="list-group-item" *ngFor="let todo of todoCollection">
+    <p>{{todo.label}}
+      <span class="badge badge-primary float-right">
+        {{ todo.status }}
+      </span>
+    </p>
+  </li>
+</ul>
+<br><br>
+<form>
+  <div class="row">
+    <div class="col-sm-8 col-md-8">
+      <input type="text" [(ngModel)]="label" name="label" class="form-control">
+    </div>
+    <div class="col-sm-4 col-md-4">
+      <button type="button"
+        class="btn btn-success btn-block"
+        (click)="onAddItem()">Add Item</button>
+    </div>
+  </div>
+</form>
+
+</div>
