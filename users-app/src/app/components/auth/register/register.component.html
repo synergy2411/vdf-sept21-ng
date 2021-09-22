@@ -32,6 +32,7 @@
                 name="password"
                 class="form-control"
                 [formControl]="password">
+                <!-- formControlName="password"> -->
                 <div [hidden]="password.valid || password.untouched">
                   <div class="alert alert-danger">
                   <div [hidden]="!password.hasError('required')">

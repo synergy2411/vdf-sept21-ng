@@ -1,6 +1,17 @@
+<div class="container">
 <h3>Hello Angular!!</h3>
 
-<app-register></app-register>
+<h4>Counter in App Comp : {{ getCounter() }}</h4>
+<button (click)="increase()"
+  class="btn btn-primary btn-sm">Increase</button>
+
+<app-counter></app-counter>
+
+</div>
+
+
+
+<!-- <app-register></app-register> -->
 
 <!-- <app-login></app-login> -->
 

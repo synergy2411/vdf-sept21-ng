@@ -14,6 +14,8 @@ import { FilterPipe } from './pipes/filter.pipe';
 import { LoginComponent } from './components/auth/login/login.component';
 import { FileUploadDirective } from './directives/fileupload.directive';
 import { RegisterComponent } from './components/auth/register/register.component';
+import { CounterService } from './services/counter.service';
+import { CounterComponent } from './components/counter/counter.component';
 
 @NgModule({
   declarations: [           // Component, Directive, Pipe
@@ -24,14 +26,15 @@ import { RegisterComponent } from './components/auth/register/register.component
     FilterPipe,
     LoginComponent,
     FileUploadDirective,
-    RegisterComponent
+    RegisterComponent,
+    CounterComponent
   ],
   imports: [               // imports the Modules - Built-in & Custom
     BrowserModule,
     FormsModule,
     ReactiveFormsModule
   ],
-  providers: [],          // Services
+  providers: [CounterService],          // Services
   bootstrap: [AppComponent]
 })
 export class AppModule { }
