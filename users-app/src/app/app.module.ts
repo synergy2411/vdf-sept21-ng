@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { UsersComponent } from './components/users/users.component';
@@ -21,6 +22,8 @@ import { ObservableDemoComponent } from './components/observable-demo/observable
 import { TodosComponent } from './components/todos/todos.component';
 import { AuthInterceptorService } from './services/auth-interceptor.service';
 import { LoggerInterceptorService } from './services/logger-interceptor.service';
+import { APP_ROUTES } from './app.routes';
+import { HeaderComponent } from './components/header/header.component';
 
 @NgModule({
   declarations: [           // Component, Directive, Pipe
@@ -34,13 +37,15 @@ import { LoggerInterceptorService } from './services/logger-interceptor.service'
     RegisterComponent,
     CounterComponent,
     ObservableDemoComponent,
-    TodosComponent
+    TodosComponent,
+    HeaderComponent
   ],
   imports: [               // imports the Modules - Built-in & Custom
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    RouterModule.forRoot(APP_ROUTES)
   ],
   providers: [{
     provide : HTTP_INTERCEPTORS,
