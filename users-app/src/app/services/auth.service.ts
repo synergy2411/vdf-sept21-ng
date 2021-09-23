@@ -6,7 +6,7 @@ import * as firebase from 'firebase/auth';
 })
 export class AuthService {
 
-  private token = null;
+  private token : string | null = null;
   constructor() { }
 
   register(email : string, password : string){
@@ -30,4 +30,21 @@ export class AuthService {
       })
       .catch(err => console.log(err))
   }
+
+  getToken () {
+    return this.token;
+  }
+
+  isAuthenticated(){
+    return this.token !== null;
+  }
+
 }
+
+
+// Value Checking
+// let x = "100";
+// let y = 100;
+// console.log(x == y);
+// // Value + Type Checking
+// console.log(x === y);
