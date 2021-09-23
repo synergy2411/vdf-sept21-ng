@@ -1,0 +1,19 @@
+<p class="display-4">Product Component Loaded</p>
+
+<div class="row">
+  <div class="col-4 text-center">
+    <ul class="list-group">
+      <li class="list-group-item">
+          <!-- http://localhost:4200/product/overview -->
+        <a [routerLink]="['overview', 199, 'iPhone13']">Overview</a>
+      </li>
+      <li class="list-group-item">
+        <!-- http://localhost:4200/product/specification -->
+        <a [routerLink]="['specification']">Specification</a>
+      </li>
+    </ul>
+  </div>
+  <div class="col-8">
+    <router-outlet></router-outlet>
+  </div>
+</div>

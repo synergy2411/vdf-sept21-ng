@@ -24,6 +24,9 @@ import { AuthInterceptorService } from './services/auth-interceptor.service';
 import { LoggerInterceptorService } from './services/logger-interceptor.service';
 import { APP_ROUTES } from './app.routes';
 import { HeaderComponent } from './components/header/header.component';
+import { ProductComponent } from './components/product/product.component';
+import { OverviewComponent } from './components/product/overview/overview.component';
+import { SpecificationComponent } from './components/product/specification/specification.component';
 
 @NgModule({
   declarations: [           // Component, Directive, Pipe
@@ -38,7 +41,10 @@ import { HeaderComponent } from './components/header/header.component';
     CounterComponent,
     ObservableDemoComponent,
     TodosComponent,
-    HeaderComponent
+    HeaderComponent,
+    ProductComponent,
+    OverviewComponent,
+    SpecificationComponent
   ],
   imports: [               // imports the Modules - Built-in & Custom
     BrowserModule,
