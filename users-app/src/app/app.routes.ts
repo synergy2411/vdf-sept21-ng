@@ -6,6 +6,7 @@ import { ObservableDemoComponent } from './components/observable-demo/observable
 import { PipeDemoComponent } from './components/pipe-demo/pipe-demo.component';
 import { TodosComponent } from './components/todos/todos.component';
 import { UsersComponent } from './components/users/users.component';
+import { LoginGaurdService } from './services/login-gaurd.service';
 
 export const APP_ROUTES : Routes = [
   {
@@ -32,7 +33,8 @@ export const APP_ROUTES : Routes = [
     component : TodosComponent
   }, {
     path : 'users',            // http://localhost:4200/users
-    component : UsersComponent
+    component : UsersComponent,
+    canActivate : [LoginGaurdService]
   },{
     path : "**",
     redirectTo : 'login',
