@@ -20,6 +20,7 @@ import { CounterComponent } from './components/counter/counter.component';
 import { ObservableDemoComponent } from './components/observable-demo/observable-demo.component';
 import { TodosComponent } from './components/todos/todos.component';
 import { AuthInterceptorService } from './services/auth-interceptor.service';
+import { LoggerInterceptorService } from './services/logger-interceptor.service';
 
 @NgModule({
   declarations: [           // Component, Directive, Pipe
@@ -44,6 +45,10 @@ import { AuthInterceptorService } from './services/auth-interceptor.service';
   providers: [{
     provide : HTTP_INTERCEPTORS,
     useClass : AuthInterceptorService,
+    multi : true
+  },{
+    provide : HTTP_INTERCEPTORS,
+    useClass : LoggerInterceptorService,
     multi : true
   }],          // Services
   bootstrap: [AppComponent]
