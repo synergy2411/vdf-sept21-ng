@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { USER_DATA } from '../model/mocks';
 import { IUser } from '../model/user';
-import { HttpClient, HttpParams } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { AuthService } from './auth.service';
 
@@ -23,9 +23,7 @@ export class DataService {
   getHttpUserData(): Observable<IUser[]>{
     // return this.http.get(`./assets/data/users.json`)
     return this.http.get<IUser[]>(
-      `https://vdf-users-app-default-rtdb.firebaseio.com/userdata.json`,{
-        params : new HttpParams().set("auth", this.authService.getToken())
-      })
+      `https://vdf-users-app-default-rtdb.firebaseio.com/userdata.json`)
   }
 
   getTodos(){

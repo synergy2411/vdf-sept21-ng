@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { UsersComponent } from './components/users/users.component';
@@ -19,6 +19,7 @@ import { CounterService } from './services/counter.service';
 import { CounterComponent } from './components/counter/counter.component';
 import { ObservableDemoComponent } from './components/observable-demo/observable-demo.component';
 import { TodosComponent } from './components/todos/todos.component';
+import { AuthInterceptorService } from './services/auth-interceptor.service';
 
 @NgModule({
   declarations: [           // Component, Directive, Pipe
@@ -40,7 +41,11 @@ import { TodosComponent } from './components/todos/todos.component';
     ReactiveFormsModule,
     HttpClientModule
   ],
-  providers: [],          // Services
+  providers: [{
+    provide : HTTP_INTERCEPTORS,
+    useClass : AuthInterceptorService,
+    multi : true
+  }],          // Services
   bootstrap: [AppComponent]
 })
 export class AppModule { }
