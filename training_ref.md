@@ -43,8 +43,66 @@ TypeScript ---> TSC ----> JavaSCript
 - Forms 
     - Template driven form
 
-
+# Day 03
 - Model driven/ Reactive form
 - Services
 - Observables
 - XHR Calls
+
+
+# Services
+- Services are singleton in the scope they are registered with.
+    : AppModule - Root Module - providers - App level singleton access - including all components and all services.
+    : Components - providers - creating new scope for service - self and child components will receive the singleton instance, but not the other services.
+
+> ng g s services/data
+
+
+- import HttpClientModule
+- HttpClient Class
+- GET/POST/PATCH/DELETE
+
+
+
+# RxJS operators
+- take
+- takeWhile
+- takeUntil
+- filter
+- map
+- tap
+- debounceTime
+- throttleTime
+- MergeMap
+- switchMap
+- cancatMap
+- forkJoin
+
+
+# Firebase Cloud integration with Angular
+- Login with gmail credentials on console.firebase.google.com
+- Create new Project
+- Create RealTime Database
+- Open Database in test mode
+- Import JSON from local machine
+
+
+- JWT token Authentication
+- Interceptors
+- Routing
+- PWA
+- Redux - basics
+
+
+# Reactive Forms
+- FormControl : represent the individual form element
+- FormGroup : represent the complete form | "ngForm"
+- FormBuilder : builds the form by grouping individual FormControl elements
+
+# Firebase Authentication
+- Enable the Authentication on Firebase
+- Integrate Angular App with Firebase Cloud
+    > npm install firebase (Connect, Register, Login etc)
+- Register / Login Yourself on Firebase
+- Firebase assigns token on success Login
+- Make GET call with JWT Token
