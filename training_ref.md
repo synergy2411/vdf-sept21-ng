@@ -90,7 +90,8 @@ TypeScript ---> TSC ----> JavaSCript
 - JWT token Authentication
 - Interceptors
 - Routing
-- PWA
+- Modules
+- PWA : ng add @angular/pwa
 - Redux - basics
 
 
@@ -106,3 +107,12 @@ TypeScript ---> TSC ----> JavaSCript
 - Register / Login Yourself on Firebase
 - Firebase assigns token on success Login
 - Make GET call with JWT Token
+
+# Routing Terminologies
+- Routes : configure the components with routes
+- RouterModule : configure the routes for App
+- RouterLink : configure the links for URL
+- RouterOutlet : provide the space to load the component template
+- Router Service : programmatically navigate the user
+- CanActivate Gaurd - routes protection
+- ActivatedRoute Service : access of route / URL
