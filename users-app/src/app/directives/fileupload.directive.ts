@@ -5,20 +5,20 @@ import { Directive, HostListener } from "@angular/core";
 })
 export class FileUploadDirective{
 
-  @HostListener("dragover")
-  ondragover(){
+  @HostListener("dragover", ["$event"])
+  ondragover(event){
+    event.preventDefault()
     console.log("Drag over ")
   }
 
-  @HostListener("drag")
-  ondrop(){
+  @HostListener("drop", ['$event'])
+  ondrop(ev){
     console.log("Dropped")
+    ev.preventDefault();
+    var data = ev.dataTransfer.getData("text");
+    ev.target.appendChild(document.getElementById(data));
   }
 
-  @HostListener("click")
-  onclick(){
-    console.log("Clicked")
-  }
 
 
 }

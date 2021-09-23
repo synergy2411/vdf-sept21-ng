@@ -1,21 +1,27 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CounterService } from './services/counter.service';
+import * as firebase from 'firebase/app';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
+  constructor(private ctrService: CounterService) {}
 
-  constructor(private ctrService : CounterService){}
-
-  getCounter(){
-    return this.ctrService.getCounter()
+  ngOnInit() {
+    firebase.initializeApp({
+      apiKey: 'AIzaSyArYm4BUDR7DjDgjLt9JK_Naq5gQDVOPlU',
+      authDomain: 'vdf-users-app.firebaseapp.com',
+    });
   }
 
-  increase(){
-    this.ctrService.increaseCounter()
+  getCounter() {
+    return this.ctrService.getCounter();
   }
 
+  increase() {
+    this.ctrService.increaseCounter();
+  }
 }
