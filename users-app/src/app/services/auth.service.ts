@@ -42,6 +42,16 @@ export class AuthService {
     return this.token !== null;
   }
 
+  logout(){
+    firebase.signOut(firebase.getAuth())
+      .then(response => {
+        this.token = null;
+        this.router.navigate(["login"])
+      }).catch(err => {
+        console.log(err)
+      })
+  }
+
 }
 
 
