@@ -4,6 +4,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 
+import { EmployeeModule } from './modules/employee/employee.module';
+
 import { AppComponent } from './app.component';
 import { UsersComponent } from './components/users/users.component';
 import { UserInfoComponent } from './components/users/user-info/user-info.component';
@@ -27,6 +29,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { ProductComponent } from './components/product/product.component';
 import { OverviewComponent } from './components/product/overview/overview.component';
 import { SpecificationComponent } from './components/product/specification/specification.component';
+import { LoadingComponent } from './components/loading/loading.component';
 
 @NgModule({
   declarations: [           // Component, Directive, Pipe
@@ -44,14 +47,16 @@ import { SpecificationComponent } from './components/product/specification/speci
     HeaderComponent,
     ProductComponent,
     OverviewComponent,
-    SpecificationComponent
+    SpecificationComponent,
+    LoadingComponent
   ],
   imports: [               // imports the Modules - Built-in & Custom
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    RouterModule.forRoot(APP_ROUTES)
+    RouterModule.forRoot(APP_ROUTES),
+    EmployeeModule
   ],
   providers: [{
     provide : HTTP_INTERCEPTORS,

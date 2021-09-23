@@ -9,6 +9,8 @@ import { AuthService } from './services/auth.service';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent implements OnInit {
+  showLoader : boolean = false;
+
   constructor(
       private ctrService: CounterService,
       private authService : AuthService) {}
@@ -18,6 +20,11 @@ export class AppComponent implements OnInit {
       apiKey: 'AIzaSyArYm4BUDR7DjDgjLt9JK_Naq5gQDVOPlU',
       authDomain: 'vdf-users-app.firebaseapp.com',
     });
+
+    setInterval(() => {
+      this.showLoader = false;
+    }, 5000)
+
   }
 
   isAuthenticated(){

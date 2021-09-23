@@ -1,0 +1,18 @@
+.back-drop{
+  width: 100vw;
+  height: 100vh;
+  z-index: 50;
+  background-color: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  left: 0;
+  top: 0;
+}
+
+.my-position{
+  width: 60vw;
+  height: 40vh;
+  left: 20vw;
+  top: 30vh;
+  z-index: 100;
+  position: fixed;
+}
