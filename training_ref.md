@@ -125,10 +125,10 @@ TypeScript ---> TSC ----> JavaSCript
 
 - PWA
 - NGRX
+- App Optimization
+- Secure App
 - Testing
 - Deployment
-- Secure App
-- App Optimization
 - FAQ
 
 - ng add @angular/pwa
@@ -139,3 +139,15 @@ TypeScript ---> TSC ----> JavaSCript
 
 # NGRX
 > npm install @ngrx/store@10
+> npm install @ngrx/store-devtools
+
+# AoT Compiler
+- Tree-shaking : make app size reduced
+- lesser time to load the app on browser
+
+# Steps for Library creation
+- ng g library <lib-name>
+- ng build <lib-name>
+- restart the server > ng serve
+- import library module in application
+- use the lib functionality exported by public.api.ts file

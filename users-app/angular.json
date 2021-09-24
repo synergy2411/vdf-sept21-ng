@@ -124,6 +124,46 @@
           }
         }
       }
+    },
+    "vdf-lib": {
+      "projectType": "library",
+      "root": "projects/vdf-lib",
+      "sourceRoot": "projects/vdf-lib/src",
+      "prefix": "vdf",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "tsConfig": "projects/vdf-lib/tsconfig.lib.json",
+            "project": "projects/vdf-lib/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/vdf-lib/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/vdf-lib/src/test.ts",
+            "tsConfig": "projects/vdf-lib/tsconfig.spec.json",
+            "karmaConfig": "projects/vdf-lib/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/vdf-lib/tsconfig.lib.json",
+              "projects/vdf-lib/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }},
   "defaultProject": "users-app"
 }
