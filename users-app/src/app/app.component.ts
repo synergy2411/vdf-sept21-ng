@@ -20,7 +20,7 @@ export class AppComponent implements OnInit {
       apiKey: 'AIzaSyArYm4BUDR7DjDgjLt9JK_Naq5gQDVOPlU',
       authDomain: 'vdf-users-app.firebaseapp.com',
     });
-
+    // debugger;
     setInterval(() => {
       this.showLoader = false;
     }, 5000)

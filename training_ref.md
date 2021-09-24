@@ -116,3 +116,17 @@ TypeScript ---> TSC ----> JavaSCript
 - Router Service : programmatically navigate the user
 - CanActivate Gaurd - routes protection
 - ActivatedRoute Service : access of route / URL
+
+
+
+
+
+
+
+- PWA
+- NGRX
+- Testing
+- Deployment
+- Secure App
+- App Optimization
+- FAQ

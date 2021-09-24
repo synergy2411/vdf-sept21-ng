@@ -30,6 +30,8 @@ import { ProductComponent } from './components/product/product.component';
 import { OverviewComponent } from './components/product/overview/overview.component';
 import { SpecificationComponent } from './components/product/specification/specification.component';
 import { LoadingComponent } from './components/loading/loading.component';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [           // Component, Directive, Pipe
@@ -56,7 +58,8 @@ import { LoadingComponent } from './components/loading/loading.component';
     ReactiveFormsModule,
     HttpClientModule,
     RouterModule.forRoot(APP_ROUTES),
-    EmployeeModule
+    EmployeeModule,
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [{
     provide : HTTP_INTERCEPTORS,

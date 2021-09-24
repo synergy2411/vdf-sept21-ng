@@ -12,8 +12,10 @@ export class LoginComponent implements OnInit {
   constructor(private authService : AuthService) { }
 
   ngOnInit(): void {
+    // debugger;
   }
   onLogin(f : NgForm){
+    // debugger;
     console.log(f);
     this.authService.login(
       f.value.username,
