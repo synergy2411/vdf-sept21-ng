@@ -17,6 +17,10 @@ function rootReducer(state = initialState, action){
         return {
             counter : state.counter + action.value
         }
+    }else if(action.type === "SUBTRACT_COUNTER"){
+        return {
+            counter : state.counter - action.value
+        }
     }
     return state;
 }
@@ -33,6 +37,7 @@ store.subscribe(() => {
 
 // Actions
 store.dispatch({type : "INCREMENT"})
+store.dispatch({type : "INCREMENT"})
 // console.log("[INCREMENT : STATE]" , store.getState())
 
 store.dispatch({type : "DECREMENT"})
@@ -41,3 +46,4 @@ store.dispatch({type : "DECREMENT"})
 store.dispatch({type : "ADD_COUNTER", value : 10})
 
 // Subtract value : 5 from counter
+store.dispatch({type : "SUBTRACT_COUNTER", value : 5})
