@@ -17,6 +17,8 @@
   <ul class="list-group">
     <li class="list-group-item"
       *ngFor="let todo of todoCollection | filter : filteredStatus">
+    <!-- <li class="list-group-item"
+      *ngFor="let todo of todoCollection; trackby : trackByFunc;"> -->
       <p>{{todo.label | uppercase}}
         <span class="badge badge-dark float-right">
           {{ todo.status }}

@@ -8,7 +8,7 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
 import { EmployeeModule } from './modules/employee/employee.module';
 
-import { VdfLibModule } from 'vdf-lib'
+// import { VdfLibModule } from 'vdf-lib'
 
 import { AppComponent } from './app.component';
 import { UsersComponent } from './components/users/users.component';
@@ -66,7 +66,7 @@ import { rootReducer } from './store/reducers/root.reducer';
     EmployeeModule,
     StoreModule.forRoot({ctr : rootReducer}),
     StoreDevtoolsModule.instrument({logOnly : true}),
-    VdfLibModule,
+    // VdfLibModule,
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [{

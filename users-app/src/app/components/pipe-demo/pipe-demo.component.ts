@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { USER_DATA } from 'src/app/model/mocks';
 import { IUser } from 'src/app/model/user';
 
@@ -23,15 +23,19 @@ export class PipeDemoComponent implements OnInit {
 
   onAddNewItem(){
     // impure change
-    this.todoCollection.push({label : "New Label", status : "pending"});
+    // this.todoCollection.push({label : "New Label", status : "pending"});
     // pure change
-    // this.todoCollection = [
-    //   {label : "grocery", status : "completed"},
-    // {label : "shopping", status : "pending"},
-    // {label : "insurance", status : "completed"},
-    // {label : "planting", status : "pending"},
-    // {label : "New Label", status : "pending"}
-    // ]
+    this.todoCollection = [
+      {label : "grocery", status : "completed"},
+    {label : "shopping", status : "pending"},
+    {label : "insurance", status : "completed"},
+    {label : "planting", status : "pending"},
+    {label : "New Label", status : "pending"}
+    ]
+  }
+
+  trackByFunc(index, item){
+    return item;
   }
 
   promise = new Promise((resolve, reject) => {
@@ -40,7 +44,10 @@ export class PipeDemoComponent implements OnInit {
     }, 3000)
   })
 
-  constructor() { }
+  constructor(private cdRef : ChangeDetectorRef) {
+    // incase using third party widget, which does not affect angular app
+    // this.cdRef.detach()
+  }
 
   ngOnInit(): void {
     this.user = USER_DATA[0]

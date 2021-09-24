@@ -12,7 +12,19 @@
 
   <div class="row">
     <div class="col-12">
-      <vdf-vdf-lib></vdf-vdf-lib>
+      Interpolation : {{ jsSnippets }}
+      <br>
+      property Binding : <span [innerText]="jsSnippets"></span>
+      <br>
+      <a [href]="dangerUrl">Danger URL</a>
+      <br>
+      <a [href]="safeUrl">Safe URL</a>
+      </div>
+      </div>
+
+  <div class="row">
+    <div class="col-12">
+      <!-- <vdf-vdf-lib></vdf-vdf-lib> -->
       <!-- <app-new-employee></app-new-employee> -->
     </div>
   </div>
