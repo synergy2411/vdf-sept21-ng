@@ -130,3 +130,9 @@ TypeScript ---> TSC ----> JavaSCript
 - Secure App
 - App Optimization
 - FAQ
+
+- ng add @angular/pwa
+- ng build
+- npm install http-server -g
+- cd dist/users-app
+- http-server
