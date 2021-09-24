@@ -1,6 +1,7 @@
 import { Routes } from '@angular/router';
 import { LoginComponent } from './components/auth/login/login.component';
 import { RegisterComponent } from './components/auth/register/register.component';
+import { CounterComponent } from './components/counter/counter.component';
 import { DirectiveDemoComponent } from './components/directive-demo/directive-demo.component';
 import { ObservableDemoComponent } from './components/observable-demo/observable-demo.component';
 import { PipeDemoComponent } from './components/pipe-demo/pipe-demo.component';
@@ -48,6 +49,9 @@ export const APP_ROUTES : Routes = [
   },{
     path : "lazy",
     loadChildren : () => import("./modules/lazy/lazy.module").then(m => m.LazyModule)
+  },{
+    path : "counter",
+    component :CounterComponent
   },{
     path : "**",
     redirectTo : 'login',

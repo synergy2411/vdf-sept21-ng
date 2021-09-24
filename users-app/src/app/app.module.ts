@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
+import { StoreModule } from '@ngrx/store';
 
 import { EmployeeModule } from './modules/employee/employee.module';
 
@@ -32,6 +33,7 @@ import { SpecificationComponent } from './components/product/specification/speci
 import { LoadingComponent } from './components/loading/loading.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
+import { rootReducer } from './store/reducers/root.reducer';
 
 @NgModule({
   declarations: [           // Component, Directive, Pipe
@@ -59,6 +61,7 @@ import { environment } from '../environments/environment';
     HttpClientModule,
     RouterModule.forRoot(APP_ROUTES),
     EmployeeModule,
+    StoreModule.forRoot({ctr : rootReducer}),
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [{

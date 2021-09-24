@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Store } from '@ngrx/store';
 import { CounterService } from 'src/app/services/counter.service';
 
 @Component({
@@ -9,17 +10,26 @@ import { CounterService } from 'src/app/services/counter.service';
 })
 export class CounterComponent implements OnInit {
 
-  constructor(private ctrService : CounterService) { }
-
-  getCounter(){
-    return this.ctrService.getCounter();
-  }
-
-  increase(){
-    this.ctrService.increaseCounter();
-  }
+  counter : number;
+  constructor(private store : Store<any>){}
 
   ngOnInit(): void {
+    this.store.subscribe(response => {
+      // console.log(response);
+      this.counter = response['ctr'].counter
+    })
   }
+
+  // constructor(private ctrService : CounterService) { }
+
+  // getCounter(){
+  //   return this.ctrService.getCounter();
+  // }
+
+  // increase(){
+  //   this.ctrService.increaseCounter();
+  // }
+
+
 
 }

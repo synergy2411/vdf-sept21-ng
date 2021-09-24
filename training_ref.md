@@ -136,3 +136,6 @@ TypeScript ---> TSC ----> JavaSCript
 - npm install http-server -g
 - cd dist/users-app
 - http-server
+
+# NGRX
+> npm install @ngrx/store@10
