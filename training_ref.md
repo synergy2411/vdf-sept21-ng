@@ -151,3 +151,24 @@ TypeScript ---> TSC ----> JavaSCript
 - restart the server > ng serve
 - import library module in application
 - use the lib functionality exported by public.api.ts file
+
+# Firebase deployment
+- ng build
+- npm install firebase-tools -g
+- firebase login
+- firebase init
+- firebase deploy
+
+# Deployed Angular App : https://vdf-users-app.web.app/login
+
+# ng new test-app
+
+# Component Testing
+- Comp is created
+- Model is populated
+- Template is created from the model
+
+- ng test --code-coverage
+
+
+synergy2411@outlook.com
