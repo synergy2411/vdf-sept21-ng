@@ -5,5 +5,10 @@ const initialState = {
 }
 
 export function rootReducer(state = initialState, action: Action){
+  if(action.type === "INCREMENT"){
+    return {
+      counter : state.counter + 1
+    }
+  }
   return state;
 }

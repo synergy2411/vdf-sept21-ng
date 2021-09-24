@@ -15,9 +15,11 @@ export class CounterComponent implements OnInit {
 
   ngOnInit(): void {
     this.store.subscribe(response => {
-      // console.log(response);
       this.counter = response['ctr'].counter
     })
+  }
+  onIncrease(){
+    this.store.dispatch({type : "INCREMENT"})
   }
 
   // constructor(private ctrService : CounterService) { }
