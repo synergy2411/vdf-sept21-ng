@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { CounterService } from 'src/app/services/counter.service';
+import * as fromActions from '../../store/actions/counter.actions';
 
 @Component({
   selector: 'app-counter',
@@ -19,7 +20,13 @@ export class CounterComponent implements OnInit {
     })
   }
   onIncrease(){
-    this.store.dispatch({type : "INCREMENT"})
+    this.store.dispatch({type : fromActions.INCREMENT})
+  }
+  onDecrease(){
+    this.store.dispatch(new fromActions.OnDecrement())
+  }
+  onAdd(value: number){
+    this.store.dispatch(new fromActions.OnAddCounter(value))
   }
 
   // constructor(private ctrService : CounterService) { }
