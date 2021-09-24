@@ -4,8 +4,14 @@ import { Action } from "@ngrx/store";
 export const INCREMENT = "INCREMENT"
 export const DECREMENT = "[Counter] to decrease the counter"
 export const ADD_COUNTER = "ADD_COUNTER"
+export const SUBTRACT_COUNTER = "SUBTRACT_COUNTER"
 
 // Action Creators
+
+export class OnSubtractCounter implements Action {
+  type: string = SUBTRACT_COUNTER ;
+  constructor(public value : number){}
+}
 export class OnAddCounter implements Action {
   type: string = ADD_COUNTER ;
   constructor(public value : number){}

@@ -28,6 +28,9 @@ export class CounterComponent implements OnInit {
   onAdd(value: number){
     this.store.dispatch(new fromActions.OnAddCounter(value))
   }
+  onSubtract(value: number){
+    this.store.dispatch(new fromActions.OnSubtractCounter(value))
+  }
 
   // constructor(private ctrService : CounterService) { }
 

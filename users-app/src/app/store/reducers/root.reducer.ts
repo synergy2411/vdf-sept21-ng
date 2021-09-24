@@ -18,6 +18,9 @@ export function rootReducer(
     case fromActions.ADD_COUNTER:{
       return { counter : state.counter + action['value']}
     }
+    case fromActions.SUBTRACT_COUNTER:{
+      return { counter : state.counter - action['value']}
+    }
     default:
       return state;
   }
