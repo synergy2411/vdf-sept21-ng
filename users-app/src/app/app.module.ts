@@ -4,6 +4,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 import { StoreModule } from '@ngrx/store';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
 import { EmployeeModule } from './modules/employee/employee.module';
 
@@ -62,6 +63,7 @@ import { rootReducer } from './store/reducers/root.reducer';
     RouterModule.forRoot(APP_ROUTES),
     EmployeeModule,
     StoreModule.forRoot({ctr : rootReducer}),
+    StoreDevtoolsModule.instrument({logOnly : true}),
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [{
